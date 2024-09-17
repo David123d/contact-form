@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+</head>
+<body>
+    <h1>Formulario de Contacto</h1>
+    <form id="contact-form" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario recargue la página
+            
+            // Crear el objeto con los datos del formulario
+            const formData = new FormData(event.target);
+            
+            // URL del Google Apps Script publicado
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwm5UKmu5eS7iCkEMGcdicJbtga57NB6-l7ogoEs7uB55quWWfrrjL-ZOIqa2i7-GM0iA/exec'; // Reemplazar por la URL del Web App de Google Apps Script
+            
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => response.text())
+                .then(responseText => {
+                    alert('Formulario enviado correctamente');
+                    event.target.reset(); // Limpiar el formulario
+                })
+                .catch(error => console.error('Error al enviar el formulario:', error));
+        });
+    </script>
+</body>
+</html>
