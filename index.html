@@ -1,34 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto</title>
-</head>
-<body>
-    <h1>Formulario de Contacto</h1>
-    <form id="contact-form" method="POST">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="message">Mensaje:</label>
-        <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-        <button type="submit">Enviar</button>
+    <base target="_top">
+  </head>
+  <body>
+    <base target="_top"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><br><br>
+<div class="container" style="max-width: 90%; margin-right: auto; margin-bottom: 0px; margin-left: auto; background-color: rgb(255, 255, 255); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; margin-top: 20px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;">
+  <h2 class="form-title" style="text-align: center; color: rgb(255, 255, 255); background-color: rgb(51, 51, 51); font-size: 24px; font-weight: bold; padding-top: 15px; padding-right: 15px; padding-bottom: 15px; padding-left: 15px; margin-top: -20px; margin-right: -20px; margin-bottom: 20px; margin-left: -20px;">Contáctanos</h2>
+  <div class="form-container" style="width: 100%;">
+    <h2 class="mt-2" style="color: #c9a129; font-weight: 700; font-size: 20px; text-align: center;">¿Qué proyecto podemos desarrollar juntos para hacer crecer tu negocio?</h2>
+    <br>
+    <form id="miFormulario">
+        <div class="form-group">
+            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
+                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
+                    <img id="userLogo" src="https://drive.google.com/thumbnail?id=1JpPk-W3b1Nv68jkUEaL9GPRiRI8Dbb9L" style="width: 70%;">
+                </div>
+                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
+                    <input name="usr" id="name" type="text" placeholder="Nombres" required="" class="form-control" style="border: none;">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
+                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
+                    <img src="https://drive.google.com/thumbnail?id=1rANWVKw-eRtD4fVSvs0-Z82RG-nRZGml" style="width: 70%;">
+                </div>
+                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
+                    <input type="email" id="email" placeholder="Ingresa tu correo electrónico" required="" class="form-control">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
+                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
+                    <img src="https://drive.google.com/thumbnail?id=1-8NRa8AsJdcRt5tDXgCquNhCtQDP4YLD" style="width: 70%;">
+                </div>
+                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
+                    <select id="service" required="" class="form-control">
+                        <option value="" disabled="" selected="">Selecciona un servicio</option>
+                        <option value="Desarrollo web">Desarrollo Web</option>
+                        <option value="Desarrollo movil">Desarrollo Móvil</option>
+                        <option value="Consultoria de Software">Consultoría de Software</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
+                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
+                    <img src="https://drive.google.com/thumbnail?id=1yS-2Kz7JOyZJurR8Uv7zUvoiU9IJQkCX" style="width: 70%;">
+                </div>
+                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
+                    <textarea id="details" rows="4" placeholder="Describe brevemente tu proyecto" required="" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-grid gap-2 col-4 mx-auto">
+            <button type="submit" class="btn btn-secondary">Enviar Solicitud</button>
+        </div>
     </form>
-    
+
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+        document.getElementById('miFormulario').addEventListener('submit', function(event) {
             event.preventDefault(); // Evitar que el formulario recargue la página
             
             // Crear el objeto con los datos del formulario
             const formData = new FormData(event.target);
             
             // URL del Google Apps Script publicado
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwm5UKmu5eS7iCkEMGcdicJbtga57NB6-l7ogoEs7uB55quWWfrrjL-ZOIqa2i7-GM0iA/exec'; // Reemplazar por la URL del Web App de Google Apps Script
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwaIwjEQp6cd3mJrRBa-Jc6x6d1__D05OA3x6lGdkERuBILzPFp2runJ9awSlCZrOGXWA/exec'; // Reemplazar por la URL del Web App de Google Apps Script
             
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => response.text())
@@ -41,3 +86,4 @@
     </script>
 </body>
 </html>
+
