@@ -1,89 +1,275 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <base target="_top">
-  </head>
-  <body>
-    <base target="_top"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><br><br>
-<div class="container" style="max-width: 90%; margin-right: auto; margin-bottom: 0px; margin-left: auto; background-color: rgb(255, 255, 255); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; margin-top: 20px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;">
-  <h2 class="form-title" style="text-align: center; color: rgb(255, 255, 255); background-color: rgb(51, 51, 51); font-size: 24px; font-weight: bold; padding-top: 15px; padding-right: 15px; padding-bottom: 15px; padding-left: 15px; margin-top: -20px; margin-right: -20px; margin-bottom: 20px; margin-left: -20px;">Contáctanos</h2>
-  <div class="form-container" style="width: 100%;">
-    <h2 class="mt-2" style="color: #c9a129; font-weight: 700; font-size: 20px; text-align: center;">¿Qué proyect podemos desarrollar juntos para hacer crecer tu negocio?</h2>
-    <br>
-    <form id="miFormulario">
-        <div class="form-group">
-            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
-                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
-                    <img id="userLogo" src="https://drive.google.com/thumbnail?id=1JpPk-W3b1Nv68jkUEaL9GPRiRI8Dbb9L" style="width: 70%;">
-                </div>
-                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
-                    <input name="name" id="name" type="text" placeholder="Nombres" required="" class="form-control" style="border: none;">
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
-                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
-                    <img src="https://drive.google.com/thumbnail?id=1rANWVKw-eRtD4fVSvs0-Z82RG-nRZGml" style="width: 70%;">
-                </div>
-                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
-                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required="" class="form-control">
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
-                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
-                    <img src="https://drive.google.com/thumbnail?id=1-8NRa8AsJdcRt5tDXgCquNhCtQDP4YLD" style="width: 70%;">
-                </div>
-                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
-                    <select id="service" name="service" required="" class="form-control">
-                        <option value="" disabled="" selected="">Selecciona un servicio</option>
-                        <option value="Desarrollo web">Desarrollo Web</option>
-                        <option value="Desarrollo movil">Desarrollo Móvil</option>
-                        <option value="Consultoria de Software">Consultoría de Software</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <div class="row" style="width: 100%; margin: 0; border: 1px solid #ced4da; padding: 0px; border-radius: 4px;">
-                <div class="col" style="flex: 0 0 10%; padding: 0; background-color: #ededed; border: 1px solid #ced4da; display: flex; justify-content: center; align-items: center;">
-                    <img src="https://drive.google.com/thumbnail?id=1yS-2Kz7JOyZJurR8Uv7zUvoiU9IJQkCX" style="width: 70%;">
-                </div>
-                <div class="col" style="flex: 0 0 90%; padding: 0; display: flex; align-items: center; justify-content: center;">
-                    <textarea id="details" name="details" rows="4" placeholder="Describe brevemente tu proyecto" required="" class="form-control"></textarea>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="d-grid gap-2 col-4 mx-auto">
-            <button type="submit" class="btn btn-secondary">Enviar Solicitud</button>
-        </div>
-    </form>
+<html lang="es" style="height: 100%">
 
-    <script>
-        document.getElementById('miFormulario').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar que el formulario recargue la página
-            
-            // Crear el objeto con los datos del formulario
-            const formData = new FormData(event.target);
-            
-            // URL del Google Apps Script publicado
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwaIwjEQp6cd3mJrRBa-Jc6x6d1__D05OA3x6lGdkERuBILzPFp2runJ9awSlCZrOGXWA/exec'; // Reemplazar por la URL del Web App de Google Apps Script
-            
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => response.text())
-                .then(responseText => {
-                    alert('Formulario enviado correctamente');
-                    event.target.reset(); // Limpiar el formulario
-                })
-                .catch(error => console.error('Error al enviar el formulario:', error));
-        });
-    </script>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de contacto</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Barlow', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f9;
+    }
+
+    .banner_contact {
+      width: 100%;
+      height: 100%;
+      background-image: url("https://lh3.googleusercontent.com/d/1CKcMjy4yRYYOyrG8w20guQZEVWUTYm9a=w1000");
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+
+    .clip-path-contacto-1 {
+      clip-path: ellipse(90% 65% at 15% 87%);
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .clip-path-contacto-2 {
+      clip-path: ellipse(90% 62% at 15% 79%);
+      background: linear-gradient(135deg, #f0c530, #c69809);
+      padding: 30px 20px;
+      width: 100%;
+      height: 100%;
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+
+    .clip-path-contacto-3 {
+      width: 70px;
+      height: 70px;
+      position: relative;
+      background-color: #464444;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 7%; /* Ajustado para subir un poco */
+      left: 50%;
+      transform: translateX(-50%); /* Centra horizontalmente */
+      z-index: 3;
+    }
+
+    .clip-path-contacto-3 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translateY(0%); /* Ajusta la imagen hacia arriba */
+    }
+.clip-path-contacto-4 {
+    clip-path: circle(9.0% at 50% 11.7%);
+    background-color: #464444;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    }
+    
+    .clip-path-contacto-5 {
+      clip-path: circle(10.0% at 50% 11.7%);
+      background: linear-gradient(135deg, #f0c530, #c69809);
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    h2 {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30%;
+      width: 70%;
+    }
+
+    .form-group {
+      position: relative;
+      width: 100%;
+    }
+
+    .form-group img {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding-left: 43px;
+      padding-right: 10px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .form-group select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .form-group textarea {
+      height: auto;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #5f5e5e;
+      color: white;
+      border: none;
+      width: 70%;
+      margin-top: 10px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: center;
+    }
+
+    button:hover {
+      background-color: #d62839;
+    }
+     select:focus option {
+      color: #000; /* Color de opciones seleccionadas */
+    }
+
+    /* Si el valor del select es el predeterminado */
+    select.invalid {
+      color: #5f5e5e;
+    }
+
+    /* Si se selecciona una opción válida */
+    select.valid {
+      color: #000;
+    }
+
+     
+  </style>
+</head>
+
+<body>
+  <div class="banner_contact">
+    <div class="clip-path-contacto-1"></div>
+    <div class="clip-path-contacto-3">
+      <img src="https://lh3.googleusercontent.com/d/1yawLmHRmhr1U7tfkbZS-gV8HTz57wvOB" alt="Icono Nombre">
+    </div>
+    <div class="clip-path-contacto-4"></div>
+    <div class="clip-path-contacto-5"></div>
+    <div class="clip-path-contacto-6"></div>
+    <div class="clip-path-contacto-2">
+      <form id="miFormulario">
+        <br><br>
+        <h2>¿Qué proyecto podemos desarrollar juntos para hacer crecer tu negocio?</h2>
+        <div class="form-group">
+          <img src="https://lh3.googleusercontent.com/d/1J4xWTzYOO2ZjFlPheA04EXz0Srv1NeJa" alt="Icono Nombre">
+          <input type="text" name="name" id="name" placeholder="Nombre completo" required>
+        </div>
+
+        <div class="form-group">
+          <img src="https://lh3.googleusercontent.com/d/1zhK4fF6beN-6mtjFt9HJSLvAkxqUNxpL" alt="Icono Correo">
+          <input type="email" name="email" id="email" placeholder="Ingresa tu correo electrónico" required>
+        </div>
+
+        <div class="form-group">
+          <img src="https://lh3.googleusercontent.com/d/14ptbH3d9zUt2_8N2vHEWkNbV25qkzHeY" alt="Icono Servicio">
+          <select id="service" name="service" required style="width: 100%">
+            <option value="" disabled selected>Selecciona un servicio</option>
+            <option value="Desarrollo web">Desarrollo Web</option>
+            <option value="Desarrollo movil">Desarrollo Móvil</option>
+            <option value="Consultoria de Software">Consultoría de Software</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <img src="https://lh3.googleusercontent.com/d/1R2uOnJU6NzKHd9xOO9YtFNFmh7p0Uk09" alt="Icono Proyecto">
+          <textarea id="details" name="details" rows="3" placeholder="Describe brevemente tu proyecto" required></textarea>
+        </div>
+        <button type="submit">CONTACTAR</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwaIwjEQp6cd3mJrRBa-Jc6x6d1__D05OA3x6lGdkERuBILzPFp2runJ9awSlCZrOGXWA/exec';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => response.text())
+        .then(responseText => {
+          alert('Formulario enviado correctamente');
+          event.target.reset();
+        })
+        .catch(error => console.error('Error al enviar el formulario:', error));
+    });
+  </script>
+
+  <script>
+    const serviceSelect = document.getElementById('service');
+
+    // Al cargar la página, asegúrate de que el color sea el de "placeholder"
+    serviceSelect.classList.add('invalid');
+
+    // Cambiar el color cuando el usuario selecciona una opción válida
+    serviceSelect.addEventListener('change', function () {
+      if (serviceSelect.value === "") {
+        serviceSelect.classList.remove('valid');
+        serviceSelect.classList.add('invalid');
+      } else {
+        serviceSelect.classList.remove('invalid');
+        serviceSelect.classList.add('valid');
+      }
+    });
+  </script>
 </body>
+
 </html>
 
