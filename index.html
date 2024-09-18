@@ -1,127 +1,49 @@
 <!DOCTYPE html>
-<html lang="es" style="height: 100%">
+<html lang="es" style="height: 100%;">
 
 <head>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de contacto</title>
+  <title>Formulario de Contacto</title>
   <style>
     body, html {
+      height: 100%;
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: 'Barlow', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f4f4f9;
-    }
-
-    .banner_contact {
-      width: 100%;
-      height: 100%;
-      background-image: url("https://lh3.googleusercontent.com/d/1CKcMjy4yRYYOyrG8w20guQZEVWUTYm9a=w1000");
-      position: relative;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      overflow: hidden;
-    }
-
-    .clip-path-contacto-1 {
-      clip-path: ellipse(90% 65% at 15% 87%);
-      background-color: white;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    .clip-path-contacto-2 {
-      clip-path: ellipse(90% 62% at 15% 79%);
-      background: linear-gradient(135deg, #c2a123, #8a6f05);
-      padding: 30px 20px;
-      width: 100%;
-      height: 100%;
-      max-width: 600px;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-      margin-top: 50px;
-    }
-
-    .clip-path-contacto-3 {
-      width: 70px;
-      height: 70px;
-      position: relative;
-      background-color: #464444;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 7%; /* Ajustado para subir un poco */
-      left: 50%;
-      transform: translateX(-50%); /* Centra horizontalmente */
-      z-index: 3;
-    }
-
-    .clip-path-contacto-3 img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: translateY(0%); /* Ajusta la imagen hacia arriba */
-    }
-.clip-path-contacto-4 {
-    clip-path: circle(9.0% at 50% 11.7%);
-    background-color: #464444;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    }
-    
-    .clip-path-contacto-5 {
-      clip-path: circle(10.0% at 50% 11.7%);
-      background: linear-gradient(135deg, #c2a123, #8a6f05);
-      width: 100%;
-      height: 100%;
+      background-image: url('https://lh3.googleusercontent.com/d/1plARLFnMS8_2QOf0OQBVBhlBH0QuO-bZ=w1000'); 
       background-size: cover;
       background-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
+      background-repeat: no-repeat;
+    }
+
+    .contact-container {
+      background-color: rgba(225, 225, 225, 0.9); /* Fondo blanco semi-transparente */
+      padding: 50px; /* Aumentado */
+      border-radius: 12px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 650px; /* Ampliado horizontalmente */
+      height: auto;
+      position: relative;
     }
 
     h2 {
-      color: white;
+      color: #333;
       font-weight: 700;
-      font-size: 1rem;
       text-align: center;
-      margin-bottom: 20px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 30%;
-      width: 75%;
+      margin-bottom: 30px;
+      font-size: 1.5em;
     }
 
     .form-group {
       position: relative;
-      width: 100%;
+      margin-bottom: 20px;
     }
 
     .form-group img {
@@ -129,114 +51,116 @@
       left: 10px;
       top: 50%;
       transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
+      filter: grayscale(100%); /* Imagen en tonos grises */
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding-left: 43px;
-      padding-right: 10px;
-      height: 40px;
+    .form-control {
+      padding-left: 50px;
       border-radius: 8px;
-      border: 1px solid #ccc;
-      width: 100%;
+      border: 2px solid #ccc;
+      background-color: #f9f9f9;
+      color: #333;
+      height: 50px; /* Aumentada la altura de los inputs */
       font-size: 1rem;
-      outline: none;
     }
 
-    .form-group select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+    .form-control::placeholder {
+      color: #999;
     }
 
-    .form-group textarea {
-      height: auto;
-      min-height: 100px;
+    .form-control:focus {
+      border-color: #ffc107;
+      box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
     }
 
     button {
-      background-color: #5f5e5e;
-      color: white;
+      width: 100%;
+      background-color: #807e78;
+      color: #fff;
       border: none;
-      width: 70%;
-      margin-top: 10px;
+      padding: 10px; /* Aumentado */
       font-weight: 700;
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-size: 1rem;
+      border-radius: 30px; /* Más redondeado */
+      font-size: 1.1rem; /* Ligeramente más grande */
       cursor: pointer;
       transition: background-color 0.3s ease;
-      align-self: center;
     }
 
     button:hover {
-      background-color: #d62839;
-    }
-     select:focus option {
-      color: #000; /* Color de opciones seleccionadas */
+      background-color: #e0a800;
     }
 
-    /* Si el valor del select es el predeterminado */
-    select.invalid {
-      color: #5f5e5e;
+    .form-group img.service-icon {
+      width: 25px;
+      height: 25px;
+      fill: blue;
     }
 
-    /* Si se selecciona una opción válida */
-    select.valid {
-      color: #000;
+    .contact-container::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      background-color: #70c9be;
+      border-radius: 50%;
+      display: block;
+      z-index: 1;
     }
 
-     
+    .contact-container::after {
+      content: '🧑';
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 60px;
+      color: #e5baba;
+      z-index: 2;
+    }
   </style>
 </head>
 
 <body>
-  <div class="banner_contact">
-    <div class="clip-path-contacto-1"></div>
-    <div class="clip-path-contacto-3">
-      <img src="https://lh3.googleusercontent.com/d/1yawLmHRmhr1U7tfkbZS-gV8HTz57wvOB" alt="Icono Nombre">
-    </div>
-    <div class="clip-path-contacto-4"></div>
-    <div class="clip-path-contacto-5"></div>
-    <div class="clip-path-contacto-6"></div>
-    <div class="clip-path-contacto-2">
-      <form id="miFormulario">
-        <br><br><br><br>
-        <h2>¿Qué proyecto podemos desarrollar juntos para hacer crecer tu negocio?</h2>
-        <div class="form-group">
-          <img src="https://lh3.googleusercontent.com/d/1J4xWTzYOO2ZjFlPheA04EXz0Srv1NeJa" alt="Icono Nombre">
-          <input type="text" name="name" id="name" placeholder="Nombre completo" required>
-        </div>
+  <div class="contact-container"><br>
+    <h2>¿En qué podemos ayudarte?</h2>
+    <form id="miFormulario">
+      <div class="form-group">
+        <img src="https://img.icons8.com/ios-filled/50/000000/name.png" alt="Icono Nombre">
+        <input type="text" name="name" id="name" class="form-control" placeholder="Nombre completo" required>
+      </div>
 
-        <div class="form-group">
-          <img src="https://lh3.googleusercontent.com/d/1zhK4fF6beN-6mtjFt9HJSLvAkxqUNxpL" alt="Icono Correo">
-          <input type="email" name="email" id="email" placeholder="Ingresa tu correo electrónico" required>
-        </div>
+      <div class="form-group">
+        <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Icono Correo">
+        <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" required>
+      </div>
 
-        <div class="form-group">
-          <img src="https://lh3.googleusercontent.com/d/14ptbH3d9zUt2_8N2vHEWkNbV25qkzHeY" alt="Icono Servicio">
-          <select id="service" name="service" required style="width: 100%">
-            <option value="" disabled selected>Selecciona un servicio</option>
-            <option value="Desarrollo web">Desarrollo Web</option>
-            <option value="Desarrollo movil">Desarrollo Móvil</option>
-            <option value="Consultoria de Software">Consultoría de Software</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <img src="https://img.icons8.com/ios-filled/50/000000/services.png" alt="Icono Servicio" class="service-icon">
+        <select id="service" name="service" class="form-control" required>
+          <option value="" disabled selected>Selecciona un servicio</option>
+          <option value="Desarrollo web">Desarrollo Web</option>
+          <option value="Desarrollo movil">Desarrollo Móvil</option>
+          <option value="Consultoria de Software">Consultoría de Software</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <img src="https://lh3.googleusercontent.com/d/1R2uOnJU6NzKHd9xOO9YtFNFmh7p0Uk09" alt="Icono Proyecto">
-          <textarea id="details" name="details" rows="3" placeholder="Describe brevemente tu proyecto" required></textarea>
-        </div>
-        <button type="submit">CONTACTAR</button>
-      </form>
-    </div>
+      <div class="form-group">
+        <img src="https://img.icons8.com/ios-filled/50/000000/project.png" alt="Icono Proyecto">
+        <textarea id="details" name="details" class="form-control" rows="5" placeholder="Descripción del proyecto"
+          required></textarea>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
   </div>
 
   <script>
-    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+    document.getElementById('miFormulario').addEventListener('submit', function (event) {
       event.preventDefault();
 
       const formData = new FormData(event.target);
@@ -251,25 +175,6 @@
         .catch(error => console.error('Error al enviar el formulario:', error));
     });
   </script>
-
-  <script>
-    const serviceSelect = document.getElementById('service');
-
-    // Al cargar la página, asegúrate de que el color sea el de "placeholder"
-    serviceSelect.classList.add('invalid');
-
-    // Cambiar el color cuando el usuario selecciona una opción válida
-    serviceSelect.addEventListener('change', function () {
-      if (serviceSelect.value === "") {
-        serviceSelect.classList.remove('valid');
-        serviceSelect.classList.add('invalid');
-      } else {
-        serviceSelect.classList.remove('invalid');
-        serviceSelect.classList.add('valid');
-      }
-    });
-  </script>
 </body>
 
 </html>
-
